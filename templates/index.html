@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inventario + Supabase</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <h1>Mi Inventario</h1>
+
+  <form id="form-nuevo-producto">
+    <input type="text" id="input-nombre" placeholder="Nuevo producto..." required />
+    <input type="text" id="input-marca" placeholder="Marca..." required />
+    <input type="number" id="input-precio" placeholder="Precio..." required />
+    <input type="number" id="input-cantidad" placeholder="Cantidad..." required />
+    <button type="submit">Agregar</button>
+  </form>
+
+  <div class="board">
+    <div class="columna" data-status="available">
+      <h2>Disponible</h2>
+      <div class="tarjetas" id="col-available"></div>
+    </div>
+
+    <div class="columna" data-status="out-of-stock">
+      <h2>No disponible</h2>
+      <div class="tarjetas" id="col-out-of-stock"></div>
+    </div>
+
+  </div>
+
+  <div id="menu-flotante" class="menu-flotante oculto">
+  <h1>Editar producto</h1>
+  <form id="form-editar-producto">
+    <div id="menu-titulo" class="menu-titulo"></div>
+    
+    <input type="text" id="input-editar-nombre" placeholder="Nombre..." />
+    <input type="text" id="input-editar-marca" placeholder="Marca..." />
+    <input type="number" id="input-editar-precio" placeholder="Precio..." />
+    <input type="number" id="input-editar-cantidad" placeholder="Cantidad..." />
+    <input type="text" id="input-editar-status" placeholder="Status..." />
+    <button type="submit" >Guardar cambios</button>
+    <button type="button" id="btn-cerrar-menu">Cerrar</button>
+  </form>
+  </div>
+  
+
+  <!-- Cliente de Supabase (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
