@@ -41,10 +41,11 @@ document.getElementById("form-editar-producto").addEventListener("submit", async
   const marca = document.getElementById("input-editar-marca").value.trim();
   const precio = Number(document.getElementById("input-editar-precio").value);
   const cantidad = parseInt(document.getElementById("input-editar-cantidad").value);
+  let imageUrl = document.getElementById("imagen-editar-preview").querySelector("img")?.src || null; // Obtener la URL de la imagen actual
 
   // 1. Obtener el archivo de imagen del input de tipo file
   const file = document.getElementById("imagen-editar").files[0]; // Obtener el archivo de imagen
-  let imageUrl = null; // Inicializamos la variable para almacenar la URL de la imagen
+
 
   // 2. Si se seleccionó una imagen, la subimos a Supabase Storage
   if (file) {
