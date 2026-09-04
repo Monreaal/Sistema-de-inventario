@@ -35,7 +35,7 @@ export function renderTarjeta(producto) {
     <div>Precio: ${producto.price}</div>
     <div>Cantidad: ${producto.stock}</div>
     <div>Status: ${producto.status}</div>
-    <div>Imagen: ${producto.image_url ? `<img src="${producto.image_url}" alt="${producto.product}" width="100">` : `${producto.product}`}</div>
+    <div>${producto.image_url ? `<img src="${producto.image_url}" alt="${producto.product}" width="100">` : `${producto.product}`}</div>
     <button data-accion="borrar">🗑</button>
     <button data-accion="aumentar">➕</button>
     <button data-accion="disminuir">➖</button>
